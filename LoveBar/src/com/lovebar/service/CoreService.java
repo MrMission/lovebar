@@ -1,12 +1,16 @@
 package com.lovebar.service;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.lovebar.message.resp.Article;
+import com.lovebar.message.resp.NewsMessage;
 import com.lovebar.message.resp.TextMessage;
 import com.lovebar.util.MessageUtil;
 
@@ -90,9 +94,44 @@ public class CoreService {
 					String eventKey = requestMap.get("EventKey");
 
 					if (eventKey.equals("11")) {
-						respContent = "天气预报菜单项被点击！";
+						respContent = "天气预报1111菜单项被点击！";
+						System.out.println("**************test*****************");
+						
+						NewsMessage newsMessage = new NewsMessage();
+						newsMessage.setToUserName(fromUserName);
+						newsMessage.setFromUserName(toUserName);
+						newsMessage.setCreateTime(new Date().getTime());
+						newsMessage.setMsgType(MessageUtil.RESP_MESSAGE_TYPE_NEWS);
+						
+//						textMessage.setCoarntent(respContent);
+						int articleCount = 1;
+						newsMessage.setArticleCount(articleCount);
+						
+						Article article1 = new Article();
+						String title = "卖孔明灯";
+						String url = "http://mp.weixin.qq.com/s?__biz=MzA4ODIxNDcxMw==&mid=200038816&idx=1&sn=6bf622411fc4d0bce911d7263baa6f3e#rd";
+						String picUrl = "http://g.hiphotos.baidu.com/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26%3Bt%3Dgif/sign=d32c0c9749540923be646b2cf331ba6c/03087bf40ad162d9ac4e90a811dfa9ec8b13cde6.jpg";
+						String description = "啦啦啦，我们的目标是 1W fans！";
+					 	article1.setTitle(title);
+						article1.setUrl(url);
+						article1.setPicUrl(picUrl);
+						article1.setDescription(description);
+						
+						List<Article> articles = new ArrayList<Article>();
+						articles.add(article1);
+						
+						newsMessage.setArticles(articles);
+						
+						respMessage = MessageUtil.newsMessageToXml(newsMessage);
+						
+						System.out.println("------------------ Send To Client  Xml Format ------------------");
+						System.out.println(respMessage);
+						System.out.println("\n");
+						
+						return respMessage;
+						
 					} else if (eventKey.equals("12")) {
-						respContent = "公交查询菜单项被点击！";
+						respContent = "公交查询1111菜单项被点击！";
 					} else if (eventKey.equals("13")) {
 						respContent = "周边搜索菜单项被点击！";
 					} else if (eventKey.equals("14")) {
