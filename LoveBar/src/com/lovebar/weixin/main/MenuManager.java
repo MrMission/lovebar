@@ -142,7 +142,8 @@ public class MenuManager {
 		 * menu.setButton(new Button[] { mainBtn1, mainBtn2, btn33 });
 		 */
 		Menu menu = new Menu();
-		menu.setButton(new Button[] { mainBtn1, mainBtn2, mainBtn3 });
+//		menu.setButton(new Button[] { mainBtn1, mainBtn2, mainBtn3 });
+		menu.setButton(new Button[] { btn11, btn12, btn13 });
 
 		return menu;
 	}
