@@ -113,14 +113,14 @@ public class MenuManager {
 		CommonButton btn34 = new CommonButton();
 		btn34.setName("召唤小兵");
 		btn34.setType("click");
-		btn34.setType("34");
+		btn34.setKey("34");
 //		btn34.setType("view");
 //		btn34.setUrl("http://www.qq.com/");
 
 		CommonButton btn35 = new CommonButton();
 		btn35.setName("联系客服");
 		btn35.setType("click");
-		btn35.setType("35");
+		btn35.setKey("35");
 		
 		ComplexButton mainBtn1 = new ComplexButton();
 		mainBtn1.setName("开始赚钱");

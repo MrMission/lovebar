@@ -156,8 +156,10 @@ public class WeiXinUtil {
 			if (0 != jsonObject.getInt("errcode")) {
 				result = jsonObject.getInt("errcode");
 				log.error("创建菜单失败 errcode:{} errmsg:{}", jsonObject.getInt("errcode"), jsonObject.getString("errmsg"));
+				System.out.println("******************创建失败*******************");
 			}
 		}
+		System.out.println("*******************result=" + result + "***************");
 
 		return result;
 	}
