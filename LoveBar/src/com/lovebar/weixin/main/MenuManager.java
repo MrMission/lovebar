@@ -24,9 +24,9 @@ public class MenuManager {
 
 	public static void main(String[] args) {
 		// 第三方用户唯一凭证
-		String appId = "wx64e3b58e3b935328";
+		String appId = "wx4cc68e15b938a488";
 		// 第三方用户唯一凭证密钥
-		String appSecret = "5189ce747f0247039896e47af008664f";
+		String appSecret = "68dc307fd531bd94a9a6a2626a85fb47";
 
 		// 调用接口获取access_token
 		AccessToken at = WeiXinUtil.getAccessToken(appId, appSecret);
